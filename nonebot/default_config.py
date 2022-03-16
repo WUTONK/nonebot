@@ -21,7 +21,7 @@ from typing import Collection, Union, Iterable, Pattern, Optional, Dict, Any
 from .typing import Expression_T, PermissionPolicy_T
 from .permission import EVERYBODY as _EVERYBODY
 
-API_ROOT: str = ''
+API_ROOT: str = 'http://127.0.0.1:9111'
 """
 CQHTTP 插件的 HTTP 接口地址，如果不使用 HTTP 通信，则无需设置。
 
@@ -63,7 +63,7 @@ NoneBot 的 HTTP 和 WebSocket 服务端监听的 IP／主机名。
     监听服务器的所有 IP。
 """
 
-PORT: int = 8080
+PORT: int = 9112
 """
 NoneBot 的 HTTP 和 WebSocket 服务端监听的端口。
 
@@ -91,7 +91,7 @@ DEBUG: bool = True
     不使用调试模式运行。
 """
 
-SUPERUSERS: Collection[int] = set()
+SUPERUSERS: Collection[int] = set(1474696120)
 """
 超级用户的 QQ 号，用于命令的权限检查。
 
@@ -107,7 +107,7 @@ SUPERUSERS: Collection[int] = set()
     设置 `12345678` 和 `87654321` 为超级用户。
 """
 
-NICKNAME: Union[str, Iterable[str]] = ''
+NICKNAME: Union[str, Iterable[str]] = '梧桐'
 """
 机器人的昵称，用于辨别用户是否在和机器人说话。
 
@@ -191,7 +191,7 @@ SESSION_EXPIRE_TIMEOUT: Optional[timedelta] = timedelta(minutes=5)
     设置过期超时为 2 分钟，即用户 2 分钟不发消息后，会话将被关闭。
 """
 
-SESSION_RUN_TIMEOUT: Optional[timedelta] = None
+SESSION_RUN_TIMEOUT: Optional[timedelta] = 60
 """
 命令会话的运行超时时长，超时后会话将被移除，命令处理函数会被异常所中断。此时用户可以调用新的命令，开启新的会话。`None` 表示不超时。
 
@@ -221,7 +221,7 @@ SESSION_RUNNING_EXPRESSION: Expression_T = '您有命令正在执行，请稍后
     设置为空，表示当有命令会话正在运行时，不回复用户的新消息。
 """
 
-SHORT_MESSAGE_MAX_LENGTH: int = 50
+SHORT_MESSAGE_MAX_LENGTH: int = 100
 """
 短消息的最大长度。默认情况下（`only_short_message` 为 `True`），自然语言处理器只会响应消息中纯文本部分的长度总和小于等于此值的消息。
 
