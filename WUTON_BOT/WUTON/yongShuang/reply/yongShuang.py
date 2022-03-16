@@ -8,3 +8,4 @@ async def weather(session: CommandSession):
 async def weather(session: CommandSession):
     await session.send('ban!')
     
+    
