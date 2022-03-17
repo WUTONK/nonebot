@@ -10,4 +10,4 @@ async def _(session: RequestSession):
         await session.approve()
         return
     # 验证信息错误，拒绝入群
-    await session.reject('请说暗号')
+    await session.reject('请回复正确的消息')
